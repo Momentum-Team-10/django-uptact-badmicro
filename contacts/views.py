@@ -46,3 +46,7 @@ def delete_contact(request, pk):
 
     return render(request, "contacts/delete_contact.html",
                   {"contact": contact})
+
+
+def contact_detail(request, pk):
+    """create new view here"""
