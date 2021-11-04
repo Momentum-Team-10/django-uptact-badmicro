@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>{{contact.name}}</h3>
+{% for note in notes %}
+<p>{{note.text}}</p>
+{% endfor %}
+<div>
+  <form action="{% url 'view_contact' pk=contact.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+      <button type="submit">Add Note</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
